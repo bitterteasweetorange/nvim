@@ -1,7 +1,7 @@
 require('base')
+require('plugins')
 require('color')
 require('maps')
-require('plugins')
 require('other')
 require('p-lsp')
 require('p-null')
