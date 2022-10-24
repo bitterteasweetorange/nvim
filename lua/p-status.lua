@@ -61,6 +61,7 @@ section.left[2] = {
     provider = function()
       -- auto change color according the vim mode
      local mode_color = {n = nord_colors.blue, i = nord_colors.green,v=nord_colors.yellow,
+                          [''] = nord_colors.yellow,
                           [''] = nord_colors.blue,V=nord_colors.yellow,
                           c = nord_colors.magenta,no = nord_colors.red,s = nord_colors.orange,
                           S=nord_colors.orange,[''] = nord_colors.orange,
