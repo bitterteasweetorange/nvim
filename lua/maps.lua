@@ -17,3 +17,5 @@ keymap.set('n','s<right>','<C-w>>')
 keymap.set('n','s<up>','<C-w>+')
 keymap.set('n','s<down>','<C-w>-')
 
+keymap.set('n','H','^')
+keymap.set('n','L','$')
