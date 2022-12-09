@@ -56,7 +56,6 @@ require('packer').startup(function(use)
   use 'dhruvasagar/vim-prosession'
   use "folke/which-key.nvim"
   use 'github/copilot.vim'
-
   use({
     "folke/noice.nvim",
     requires = {
@@ -64,5 +63,6 @@ require('packer').startup(function(use)
       "rcarriga/nvim-notify",
     }
   })
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 end)
 
