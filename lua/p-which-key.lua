@@ -22,7 +22,6 @@ local mappings = {
     "Find files",
   },
   ["g"] = { '<cmd>lua require("telescope.builtin").live_grep({no_ignore=false,hidden=true})<cr>', "Find Text" },
-  ['z']={'<cmd>ZenMode<cr>','Zen Mode'},
 
   p = {
     name = "Packer",

@@ -22,3 +22,5 @@ require("notify").setup{
 }
 
 vim.keymap.set('n', '<leader>ta', '<Cmd>ToggleAlternate<CR>')
+
+vim.g.bookmark_sign = '♥'
