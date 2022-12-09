@@ -1,9 +1,14 @@
-vim.g.loaded = 1
+vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
 
 require("nvim-tree").setup({
   actions = {
     open_file={quit_on_open = true}
+  },
+  update_focused_file = {
+    enable     = true,
+    update_cwd = true,
   },
   diagnostics = {
     enable = true,
@@ -30,4 +35,4 @@ require("nvim-tree").setup({
   },
 })
 
-vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>')
+vim.keymap.set('n', '<C-e>', '<cmd>NvimTreeToggle<CR>')
