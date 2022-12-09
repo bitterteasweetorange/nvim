@@ -29,10 +29,8 @@ local function copy(args)
 end
 
 ls.add_snippets("typescriptreact", {
-    s("rc",{
-      t("export type "),f(copy,1),t({"Props = {",""}),
-      t({"}",""}),
-      t("export function "),i(1,"Com"),t("(){return (<div>"),i(2,"children"),t("</div>)} ")
+    s("log",{
+      t("console.log("),i(1,""),t(")"),
     }),
 })
 

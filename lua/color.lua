@@ -13,8 +13,6 @@ vim.api.nvim_create_autocmd('TextYankPost',{
 
 vim.g.everforest_diagnostic_line_highlight = 1
 vim.cmd('colorscheme everforest')
-
-
 vim.fn.sign_define {
   {
     name = 'DiagnosticSignError',
