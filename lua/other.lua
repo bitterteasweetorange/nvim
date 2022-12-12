@@ -1,26 +1,26 @@
-require('nvim-autopairs').setup {
-  disable_filetype = { 'TelescopePrompt', 'vim' }
-}
+require('nvim-autopairs').setup({
+  disable_filetype = { 'TelescopePrompt', 'vim' },
+})
 
-require "fidget".setup {}
+require('fidget').setup({})
 
-require('Comment').setup{}
+require('Comment').setup({})
 
-require('nvim-ts-autotag').setup {}
+require('nvim-ts-autotag').setup({})
 
-require('nvim-web-devicons').setup {
+require('nvim-web-devicons').setup({
   override = {},
-  default = true
-}
+  default = true,
+})
 
-require("todo-comments").setup {}
+require('todo-comments').setup({})
 
-require("noice").setup{
-}
-require("notify").setup{
-  render = "minimal",
-}
+require('noice').setup({})
+require('notify').setup({
+  render = 'minimal',
+})
 
 vim.keymap.set('n', '<leader>ta', '<Cmd>ToggleAlternate<CR>')
 
 vim.g.bookmark_sign = '♥'
+vim.g.bookmark_highlight_lines = 1

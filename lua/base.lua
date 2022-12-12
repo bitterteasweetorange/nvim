@@ -1,29 +1,36 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+local opt = vim.opt
 
-vim.scriptencoding = "utf-8"
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
+opt.number = true
+opt.relativenumber = true
 
-vim.opt.scrolloff = 5
-vim.opt.sidescrolloff = 5
+vim.scriptencoding = 'utf-8'
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
 
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+opt.scrolloff = 5
+opt.sidescrolloff = 5
 
-vim.opt.mouse = "a"
-vim.opt.clipboard:append ("unnamedplus")
+opt.hlsearch = true
+opt.incsearch = true
 
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+opt.mouse = 'a'
+opt.clipboard:append('unnamedplus')
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+opt.tabstop = 2
+opt.softtabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
 
-vim.opt.autoread = true
+opt.ignorecase = true
+opt.smartcase = true
+
+opt.swapfile = false
+opt.autoread = true
 vim.bo.autoread = true
 
-vim.wo.signcolumn = 'yes'
-vim.opt.list = true
+opt.signcolumn = 'yes'
+opt.list = true
+
+opt.cursorline = true
+opt.termguicolors = true
+

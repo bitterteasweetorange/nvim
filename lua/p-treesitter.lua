@@ -1,11 +1,11 @@
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
-    disable = {}
+    disable = {},
   },
   indent = {
     enable = true,
-    disable = {}
+    disable = {},
   },
   ensure_installed = {
     'tsx',
@@ -13,17 +13,17 @@ require('nvim-treesitter.configs').setup {
     'python',
     'json',
     'graphql',
-    'regex'
+    'regex',
   },
   autotag = {
-    enable = true
+    enable = true,
   },
   rainbow = {
     enable = true,
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
-  }
-}
+  },
+})
 
 require('template-string').setup({
   filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'python' }, -- filetypes where the plugin is active

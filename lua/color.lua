@@ -1,42 +1,37 @@
-vim.opt.cursorline = true
-vim.opt.termguicolors = true
-
-vim.api.nvim_create_autocmd('TextYankPost',{
+vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank {
+    vim.highlight.on_yank({
       higroup = 'IncSearch',
-      timeout = 300
-    }
+      timeout = 300,
+    })
   end,
 })
 
-
 vim.g.everforest_diagnostic_line_highlight = 1
 vim.cmd('colorscheme everforest')
-vim.fn.sign_define {
+vim.fn.sign_define({
   {
     name = 'DiagnosticSignError',
-    text = 'E',
+    text = '',
     texthl = 'DiagnosticSignError',
     linehl = 'ErrorLine',
   },
   {
     name = 'DiagnosticSignWarn',
-    text = 'W',
+    text = '',
     texthl = 'DiagnosticSignWarn',
     linehl = 'WarningLine',
   },
   {
     name = 'DiagnosticSignInfo',
-    text = 'I',
+    text = '',
     texthl = 'DiagnosticSignInfo',
     linehl = 'InfoLine',
   },
   {
     name = 'DiagnosticSignHint',
-    text = 'H',
+    text = '',
     texthl = 'DiagnosticSignHint',
     linehl = 'HintLine',
   },
-}
-
+})

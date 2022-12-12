@@ -1,13 +1,12 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
-require("nvim-tree").setup({
+require('nvim-tree').setup({
   actions = {
-    open_file={quit_on_open = true}
+    open_file = { quit_on_open = true },
   },
   update_focused_file = {
-    enable     = true,
+    enable = true,
     update_cwd = true,
   },
   diagnostics = {
@@ -15,23 +14,23 @@ require("nvim-tree").setup({
     show_on_dirs = false,
     debounce_delay = 50,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = '',
+      info = '',
+      warning = '',
+      error = '',
     },
   },
   filters = {
-    custom = { "^.git$","^node_modules$" }
+    custom = { '^.git$', '^node_modules$' },
   },
   git = {
-    enable = false
+    enable = false,
   },
   log = {
     enable = true,
-    types={
-      diagnostics = true
-    }
+    types = {
+      diagnostics = true,
+    },
   },
 })
 
