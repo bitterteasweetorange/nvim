@@ -1,5 +1,10 @@
 local actions = require('telescope.actions')
 
+require('nvim-web-devicons').setup({
+  override = {},
+  default = true,
+})
+
 require('telescope').setup({
   defaults = {
     prompt_prefix = ' ',

@@ -4,57 +4,66 @@ local keymap = vim.keymap
 keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 
-local on_attach = function(_, bufnr)
+local function lsp_key_map(bufnr, isTypescript)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<cr>', bufopts)
   keymap.set('n', '<leader>k', vim.lsp.buf.hover, bufopts)
   keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   keymap.set('n', '<leader>d', '<cmd>Telescope lsp_document_symbols<cr>', bufopts)
+
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
+    buffer = bufnr,
+    callback = function()
+      if isTypescript == true then
+        vim.notify('removeUnused')
+        require('typescript').actions.removeUnused({ sync = true })
+      end
+      vim.lsp.buf.format()
+      vim.notify('Formatting')
+    end,
+  })
 end
 
-require('typescript').setup({
-  disable_commands = false, -- prevent the plugin from creating Vim commands
-  debug = false, -- enable debug logging for commands
-  go_to_source_definition = {
-    fallback = true, -- fall back to standard LSP definition on failure
-  },
-  server = { -- pass options to lspconfig's setup method
-    on_attach = on_attach,
-    init_options = {
-      preferences = {
-        disableSuggestions = true,
+local lsp_config = {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  on_attach = function(_, bufnr)
+    lsp_key_map(bufnr)
+  end,
+}
+
+require('mason-lspconfig').setup_handlers({
+  function(server_name)
+    require('lspconfig')[server_name].setup(lsp_config)
+  end,
+  tsserver = function()
+    require('typescript').setup({
+      server = vim.tbl_extend('force', lsp_config, {
+        on_attach = function(_, bufnr)
+          lsp_key_map(bufnr, true)
+        end,
+        init_options = {
+          preferences = {
+            importModuleSpecifierPreference = 'project-relative',
+            jsxAttributeCompletionStyle = 'none',
+          },
+        },
+      }),
+    })
+  end,
+  sumneko_lua = function()
+    require('lspconfig').sumneko_lua.setup(vim.tbl_extend('force', lsp_config, {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' },
+          },
+        },
       },
-    },
-  },
+    }))
+  end,
 })
 
-vim.keymap.set('n', '<leader>o', '<Cmd>TypescriptOrganizeImports<CR>')
-vim.keymap.set('n', '<leader>a', '<Cmd>TypescriptAddMissingImports<CR>')
-vim.keymap.set('n', '<leader>r', '<Cmd>TypescriptRemoveUnused<CR>')
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig').sumneko_lua.setup({
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file('', true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
-})

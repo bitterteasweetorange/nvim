@@ -7,7 +7,6 @@ require('packer').startup(function(use)
   use('sainnhe/everforest')
   use('j-hui/fidget.nvim')
   use('folke/todo-comments.nvim')
-  use('f-person/git-blame.nvim')
   use({
     'folke/noice.nvim',
     requires = {
@@ -15,6 +14,7 @@ require('packer').startup(function(use)
       'rcarriga/nvim-notify',
     },
   })
+  use('f-person/git-blame.nvim')
   use({
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -40,6 +40,13 @@ require('packer').startup(function(use)
   use({ 'saadparwaiz1/cmp_luasnip' })
   use({ 'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*' })
 
+  -- telescope
+  use('nvim-telescope/telescope.nvim')
+  use('kyazdani42/nvim-web-devicons')
+
+  -- file explore
+  use('kyazdani42/nvim-tree.lua')
+
   -- treesitter
   use({
     'nvim-treesitter/nvim-treesitter',
@@ -47,13 +54,6 @@ require('packer').startup(function(use)
   })
   use('p00f/nvim-ts-rainbow')
   use('axelvc/template-string.nvim')
-
-  -- telescope
-  use('nvim-telescope/telescope.nvim')
-  use('kyazdani42/nvim-web-devicons')
-
-  -- file explore
-  use('kyazdani42/nvim-tree.lua')
 
   -- text
   use('rmagatti/alternate-toggler')
@@ -63,6 +63,8 @@ require('packer').startup(function(use)
   use('mg979/vim-visual-multi')
   use('gcmt/wildfire.vim')
   use('tpope/vim-surround')
+  use('AndrewRadev/sideways.vim')
+  use('bronson/vim-visual-star-search')
 
   -- other
   use('tpope/vim-obsession')
@@ -70,4 +72,10 @@ require('packer').startup(function(use)
   use('github/copilot.vim')
   use({ 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' })
   use('MattesGroeger/vim-bookmarks')
+  use('williamboman/mason.nvim')
+  use('williamboman/mason-lspconfig.nvim')
+  use({
+    'akinsho/toggleterm.nvim',
+    tag = '*',
+  })
 end)

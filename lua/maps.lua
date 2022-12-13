@@ -2,12 +2,12 @@ vim.g.mapleader = ' '
 
 local keymap = vim.keymap
 
-keymap.set('n','<leader>q', '<Cmd>q<CR>')
+keymap.set('n', '<leader>q', '<Cmd>q<CR>')
 keymap.set('n', '<leader>w', '<Cmd>w<CR>')
 
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
-keymap.set('n', 'ss', ':vsplit<Return><C-w>w', { silent = true })
+keymap.set('n', '<leader>s', ':vsplit<Return><C-w>w', { silent = true })
 keymap.set('n', 'f', '<C-w>w')
 
 keymap.set('n', 'H', '^')

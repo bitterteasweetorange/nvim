@@ -1,5 +1,6 @@
 require('base')
 require('plugins')
+require('p-mason')
 require('color')
 require('maps')
 require('other')
