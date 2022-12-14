@@ -18,11 +18,9 @@ local function lsp_key_map(bufnr, isTypescript)
     buffer = bufnr,
     callback = function()
       if isTypescript == true then
-        vim.notify('removeUnused')
         require('typescript').actions.removeUnused({ sync = true })
       end
       vim.lsp.buf.format()
-      vim.notify('Formatting')
     end,
   })
 end
