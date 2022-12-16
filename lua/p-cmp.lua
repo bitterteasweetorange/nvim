@@ -1,45 +1,39 @@
-local cmp = require('cmp')
-local lspkind = require('lspkind')
+local cmp = require 'cmp'
 local luasnip = require('luasnip')
-
+local lspkind = require 'lspkind'
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-c>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
-    ['<C-d>'] = cmp.mapping(function(fallback)
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<c-d>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(1) then
         luasnip.jump(1)
       else
         fallback()
       end
-    end, { 'i', 's' }),
-    ['<C-b>'] = cmp.mapping(function(fallback)
+    end, { "i", "s" }),
+    ['<c-b>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
-    end, { 'i', 's' }),
+    end, { "i", "s" })
   }),
   sources = cmp.config.sources({
-    { name = 'vsnip' }, -- For vsnip users.
-    { name = 'luasnip' }, -- For luasnip users.
-    {
-      name = 'nvim_lsp',
+    { name = 'nvim_lsp',
       entry_filter = function(entry)
         return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-      end,
+      end
     },
+    { name = 'luasnip' }, -- For luasnip users.
   }, {
     { name = 'buffer' },
   }),
@@ -54,11 +48,35 @@ cmp.setup({
         end
       end
       return lspkind.cmp_format({ with_text = true })(entry, vim_item)
-    end,
-  },
+    end
+  }
+})
+
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+  }, {
+    { name = 'buffer' },
+  })
+})
+
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
 
 vim.cmd([[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
+set completeopt=menuone,noinsert,noselect
+highlight! default link CmpItemKind CmpItemMenuDefault
 ]])

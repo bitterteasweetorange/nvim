@@ -1,81 +1,70 @@
-vim.cmd([[packadd packer.nvim]])
+vim.cmd [[packadd packer.nvim]]
 
-require('packer').startup(function(use)
-  use('wbthomason/packer.nvim')
-
-  -- ui
-  use('sainnhe/everforest')
-  use('j-hui/fidget.nvim')
-  use('folke/todo-comments.nvim')
-  use({
-    'folke/noice.nvim',
+return require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
+  use {
+    'nvim-tree/nvim-tree.lua',
     requires = {
-      'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
+      'nvim-tree/nvim-web-devicons',
     },
-  })
-  use('f-person/git-blame.nvim')
-  use({
+    tag = 'nightly'
+  }
+  use 'sainnhe/everforest'
+
+  use 'rmagatti/alternate-toggler'
+  use 'windwp/nvim-autopairs'
+  use 'mg979/vim-visual-multi'
+  use 'gcmt/wildfire.vim'
+  use 'tpope/vim-surround'
+  use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  })
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  use 'MattesGroeger/vim-bookmarks'
+  use 'tom-anders/telescope-vim-bookmarks.nvim'
 
-  -- lsp
-  use('neovim/nvim-lspconfig')
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
 
-  -- format
-  use('nvim-lua/plenary.nvim')
-  use('jose-elias-alvarez/null-ls.nvim')
-  use('jose-elias-alvarez/typescript.nvim')
-
-  -- cmp
-  use('onsails/lspkind-nvim')
-  use('hrsh7th/cmp-nvim-lsp')
-  use('hrsh7th/cmp-buffer')
-  use('hrsh7th/cmp-path')
-  use('hrsh7th/cmp-cmdline')
-  use('hrsh7th/nvim-cmp')
-
-  -- snip
-  use({ 'saadparwaiz1/cmp_luasnip' })
-  use({ 'L3MON4D3/LuaSnip', tag = 'v<CurrentMajor>.*' })
-
-  -- telescope
-  use('nvim-telescope/telescope.nvim')
-  use('kyazdani42/nvim-web-devicons')
-
-  -- file explore
-  use('kyazdani42/nvim-tree.lua')
-
-  -- treesitter
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'jose-elias-alvarez/typescript.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'windwp/nvim-ts-autotag'
+  use 'p00f/nvim-ts-rainbow'
+  use 'axelvc/template-string.nvim'
+  use 'j-hui/fidget.nvim'
+  use 'folke/todo-comments.nvim'
   use({
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
+    "folke/noice.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   })
-  use('p00f/nvim-ts-rainbow')
-  use('axelvc/template-string.nvim')
-
-  -- text
-  use('rmagatti/alternate-toggler')
-  use('windwp/nvim-autopairs')
-  use('windwp/nvim-ts-autotag')
-  use('numToStr/Comment.nvim')
-  use('mg979/vim-visual-multi')
-  use('gcmt/wildfire.vim')
-  use('tpope/vim-surround')
-  use('AndrewRadev/sideways.vim')
-  use('bronson/vim-visual-star-search')
-
-  -- other
-  use('tpope/vim-obsession')
-  use('dhruvasagar/vim-prosession')
-  use('github/copilot.vim')
-  use({ 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' })
-  use('MattesGroeger/vim-bookmarks')
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
+  use 'numToStr/Comment.nvim'
+  use 'AndrewRadev/sideways.vim'
   use({
     'akinsho/toggleterm.nvim',
-    tag = '*',
+    tag = '*'
   })
+  use 'tpope/vim-obsession'
+  use 'dhruvasagar/vim-prosession'
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+  use('f-person/git-blame.nvim')
+  use('github/copilot.vim')
 end)

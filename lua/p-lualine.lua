@@ -1,4 +1,4 @@
-require('lualine').setup({
+require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
@@ -15,15 +15,15 @@ require('lualine').setup({
       statusline = 1000,
       tabline = 1000,
       winbar = 1000,
-    },
+    }
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_c = { { 'filename', path = 3 } },
-    lualine_b = { 'diagnostics' },
+    lualine_b = { { 'filename', path = 3 } },
+    lualine_c = { 'diagnostics' },
     lualine_x = {},
-    lualine_y = {},
-    lualine_z = { 'filetype' },
+    lualine_y = { '' },
+    lualine_z = { 'filetype' }
   },
   inactive_sections = {
     lualine_a = {},
@@ -31,10 +31,10 @@ require('lualine').setup({
     lualine_c = { 'filename' },
     lualine_x = { 'location' },
     lualine_y = {},
-    lualine_z = {},
+    lualine_z = {}
   },
   tabline = {},
   winbar = {},
   inactive_winbar = {},
-  extensions = {},
-})
+  extensions = {}
+}
