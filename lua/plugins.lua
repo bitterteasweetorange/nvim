@@ -49,13 +49,6 @@ return require('packer').startup(function(use)
   use 'axelvc/template-string.nvim'
   use 'j-hui/fidget.nvim'
   use 'folke/todo-comments.nvim'
-  use({
-    "folke/noice.nvim",
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-    }
-  })
   use 'numToStr/Comment.nvim'
   use 'AndrewRadev/sideways.vim'
   use({
