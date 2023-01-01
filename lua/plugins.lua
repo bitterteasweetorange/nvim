@@ -48,9 +48,9 @@ return require('packer').startup(function(use)
   use 'p00f/nvim-ts-rainbow'
   use 'axelvc/template-string.nvim'
   use 'j-hui/fidget.nvim'
+  use 'xiyaowong/nvim-transparent'
   use 'folke/todo-comments.nvim'
   use 'numToStr/Comment.nvim'
-  use 'AndrewRadev/sideways.vim'
   use({
     'akinsho/toggleterm.nvim',
     tag = '*'
