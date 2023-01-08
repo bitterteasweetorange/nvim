@@ -43,7 +43,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
-opt.whichwrap = 'h,l'
 
 opt.updatetime = 300
 opt.timeoutlen = 500
