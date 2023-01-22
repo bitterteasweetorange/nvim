@@ -73,4 +73,8 @@ return require('packer').startup(function(use)
   use 'dhruvasagar/vim-prosession'
   use('f-person/git-blame.nvim')
   use('github/copilot.vim')
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+  })
 end)
