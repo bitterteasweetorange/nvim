@@ -44,7 +44,7 @@ require('mason-lspconfig').setup_handlers({
         init_options = {
           preferences = {
             importModuleSpecifierPreference = 'project=relative',
-            jsxAttributeCompletionStylr = 'none'
+            jsxAttributeCompletionStyle = 'none'
           }
         }
       })
