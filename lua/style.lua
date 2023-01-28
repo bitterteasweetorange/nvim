@@ -1,8 +1,3 @@
-require 'fidget'.setup({
-  window = {
-    blend = 0
-  }
-})
 require 'todo-comments'.setup()
 
 require("transparent").setup({
