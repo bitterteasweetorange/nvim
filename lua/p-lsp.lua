@@ -2,7 +2,6 @@ local on_attach = function(_, bufnr)
 
   -- format on save
   vim.api.nvim_create_autocmd('BufWritePre', {
-    group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
     buffer = bufnr,
     callback = function()
       vim.lsp.buf.format()
@@ -15,6 +14,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lsp_config = {
   capabilities = capabilities,
+  group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
   on_attach = function(_, bufnr)
     on_attach(_, bufnr)
   end
