@@ -1,5 +1,4 @@
 local on_attach = function(_, bufnr)
-
   -- format on save
   vim.api.nvim_create_autocmd('BufWritePre', {
     buffer = bufnr,
@@ -24,7 +23,7 @@ require('mason-lspconfig').setup_handlers({
   function(server_name)
     require('lspconfig')[server_name].setup(lsp_config)
   end,
-  sumneko_lua = function()
+  lua_ls = function()
     require('lspconfig').lua_ls.setup(vim.tbl_extend('force', lsp_config, {
       settings = {
         Lua = {
