@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/Users/sunlee/.local/share/nvim/site/pack/packer/start/git-blame.nvim",
     url = "https://github.com/f-person/git-blame.nvim"
   },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/Users/sunlee/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/sunlee/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
