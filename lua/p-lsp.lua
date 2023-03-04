@@ -24,8 +24,8 @@ require('mason-lspconfig').setup_handlers({
   function(server_name)
     require('lspconfig')[server_name].setup(lsp_config)
   end,
-  sumneko_lua = function()
-    require('lspconfig').sumneko_lua.setup(vim.tbl_extend('force', lsp_config, {
+  lua_ls = function()
+    require('lspconfig').lua_ls.setup(vim.tbl_extend('force', lsp_config, {
       settings = {
         Lua = {
           diagnostics = {
