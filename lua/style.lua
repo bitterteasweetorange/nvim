@@ -7,13 +7,3 @@ require("transparent").setup({
   },
   exclude = {}, -- table: groups you don't want to clear
 })
-
-require 'noice'.setup({
-  messages = {
-    enable = false
-  }
-})
-require 'notify'.setup({
-  background_colour = "#000000",
-  render = 'minimal'
-})
