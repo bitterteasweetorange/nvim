@@ -1,12 +1,5 @@
 vim.cmd [[packadd packer.nvim]]
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua PackerSync
-  augroup end
-]])
-
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use {
@@ -54,7 +47,6 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use 'p00f/nvim-ts-rainbow'
   use 'axelvc/template-string.nvim'
-  use 'xiyaowong/nvim-transparent'
   use 'folke/todo-comments.nvim'
   use 'numToStr/Comment.nvim'
   use({
