@@ -7,3 +7,12 @@
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+
+## Installation
+
+```
+git clone git@github.com:bitterteasweetorange/nvim.git ~/.config/nvim
+nvim
+PackerInstall
+```
+
