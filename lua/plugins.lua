@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'jose-elias-alvarez/typescript.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
+  use 'nvim-treesitter/nvim-treesitter-context'
   use 'nvim-treesitter/nvim-treesitter'
   use 'windwp/nvim-ts-autotag'
   use 'p00f/nvim-ts-rainbow'
