@@ -174,11 +174,6 @@ _G.packer_plugins = {
     path = "/Users/orange/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-transparent"] = {
-    loaded = true,
-    path = "/Users/orange/.local/share/nvim/site/pack/packer/start/nvim-transparent",
-    url = "https://github.com/xiyaowong/nvim-transparent"
-  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/Users/orange/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -214,11 +209,6 @@ _G.packer_plugins = {
     path = "/Users/orange/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["telescope-vim-bookmarks.nvim"] = {
-    loaded = true,
-    path = "/Users/orange/.local/share/nvim/site/pack/packer/start/telescope-vim-bookmarks.nvim",
-    url = "https://github.com/tom-anders/telescope-vim-bookmarks.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/orange/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -243,11 +233,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/orange/.local/share/nvim/site/pack/packer/start/typescript.nvim",
     url = "https://github.com/jose-elias-alvarez/typescript.nvim"
-  },
-  ["vim-bookmarks"] = {
-    loaded = true,
-    path = "/Users/orange/.local/share/nvim/site/pack/packer/start/vim-bookmarks",
-    url = "https://github.com/MattesGroeger/vim-bookmarks"
   },
   ["vim-obsession"] = {
     loaded = true,
