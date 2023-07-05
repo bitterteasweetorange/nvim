@@ -1,21 +1,13 @@
 local on_attach = function(_, bufnr)
-  -- format on save
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format()
-    end
-  })
-
   local Format = vim.api.nvim_create_augroup("Format", { clear = true })
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = Format,
     pattern = "*.tsx,*.ts,*.jsx,*.js",
     callback = function()
-      if vim.fn.exists(":TypescriptFixAll") then
-        vim.cmd("TypescriptAddMissingImports!")
-        vim.cmd("TypescriptOrganizeImports!")
-      end
+      local ts = require('typescript').actions
+      ts.addMissingImports { sync = true }
+      ts.organizeImports { sync = true }
+      vim.lsp.buf.format()
     end,
   })
 end
@@ -63,6 +55,4 @@ require('mason-lspconfig').setup_handlers({
   end
 })
 
-vim.keymap.set('n', '<leader>o', '<cmd>TypescriptOrganizeImports<cr>')
-vim.keymap.set('n', '<leader>a', '<cmd>TypescriptAddMissingImports<cr>')
 vim.keymap.set('n', '<leader>r', '<cmd>TypescriptRemoveUnused<cr>')
