@@ -1,7 +1,8 @@
 local null_ls = require("null-ls")
+local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
-    null_ls.builtins.formatting.prettierd
+    formatting.prettierd.with({ extra_args = { "--no-semi", "--single-quote" } }),
   },
 })
