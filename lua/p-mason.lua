@@ -1,10 +1,16 @@
 require("mason").setup()
-require("mason-lspconfig").setup({
+
+require('mason-tool-installer').setup {
   ensure_installed = {
-    'lua_ls',
-    'tsserver',
-    'graphql',
-    'rust_analyzer'
+          'eslint-lsp',
+          'graphql-language-service-cli',
+          'json-lsp',
+          'lua-language-server',
+          'prettierd',
+          'rust-analyzer',
+          'stylua',
+          'typescript-language-server'
+
   },
-  automatic_installation = true,
-})
+  auto_update = true,
+}
