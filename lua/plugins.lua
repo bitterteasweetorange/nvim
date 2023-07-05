@@ -61,4 +61,5 @@ return require('packer').startup(function(use)
     "glepnir/lspsaga.nvim",
     branch = "main",
   })
+  use 'folke/flash.nvim'
 end)
