@@ -53,5 +53,3 @@ require('mason-lspconfig').setup_handlers({
     })
   end
 })
-
-vim.keymap.set('n', '<leader>r', '<cmd>TypescriptRemoveUnused<cr>')
