@@ -16,3 +16,5 @@ keymap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 keymap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 keymap("n", "<leader>r", "<cmd>Lspsaga rename<CR>")
+
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
