@@ -10,7 +10,6 @@ require('mason-tool-installer').setup {
     'rust-analyzer',
     'stylua',
     'typescript-language-server'
-
   },
   auto_update = true,
 }

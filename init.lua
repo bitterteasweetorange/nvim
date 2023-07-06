@@ -58,11 +58,12 @@ require("lazy").setup({
   "tpope/vim-obsession",
   "dhruvasagar/vim-prosession",
 
-  "nvim-tree/nvim-tree.lua",
-  "nvim-tree/nvim-web-devicons",
 
   "f-person/git-blame.nvim",
   "github/copilot.vim",
+
+  "nvim-tree/nvim-tree.lua",
+  "nvim-tree/nvim-web-devicons",
   {
     "folke/flash.nvim",
     event = "VeryLazy",

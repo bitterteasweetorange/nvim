@@ -43,10 +43,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end
 })
 
-
 opt.updatetime = 300
 opt.timeoutlen = 500
-
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
