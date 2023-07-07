@@ -46,8 +46,13 @@ require("lazy").setup({
   "jose-elias-alvarez/typescript.nvim",
   "jose-elias-alvarez/null-ls.nvim",
 
+  {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+  },
   "nvim-treesitter/nvim-treesitter-context",
-  "nvim-treesitter/nvim-treesitter",
   "windwp/nvim-ts-autotag",
   "p00f/nvim-ts-rainbow",
   "axelvc/template-string.nvim",
@@ -58,8 +63,6 @@ require("lazy").setup({
 
   "tpope/vim-obsession",
   "dhruvasagar/vim-prosession",
-
-
   "f-person/git-blame.nvim",
   "github/copilot.vim",
 
@@ -110,3 +113,4 @@ require('p-treesitter')
 require('other')
 require('p-tree')
 require('p-yanky')
+require('p-comment')

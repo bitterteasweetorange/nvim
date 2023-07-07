@@ -1,5 +1,7 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "tsx", "lua", "rust", "json", "graphql", "regex", "vim", "markdown", "markdown_inline" },
+  ensure_installed = { "typescript", "javascript", "html", "css", "tsx", "lua", "rust", "json", "graphql", "regex",
+    "prisma", "markdown",
+    "markdown_inline" },
 
   sync_install = false,
   auto_install = true,
@@ -20,7 +22,10 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
     extended_mode = true,
     max_file_lines = nil
-  }
+  },
+  context_commentstring = {
+    enable = true,
+  },
 }
 
 require('template-string').setup({
