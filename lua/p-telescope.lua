@@ -10,6 +10,7 @@ require('nvim-web-devicons').setup({
 })
 require('telescope').setup {
   defaults = {
+    dynamic_preview_title = true,
     path_display = { 'smart' },
     mappings = {
       i = {

@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
   print('err')
   vim.fn.system({
@@ -64,6 +65,9 @@ require("lazy").setup({
 
   "nvim-tree/nvim-tree.lua",
   "nvim-tree/nvim-web-devicons",
+
+  "gbprod/yanky.nvim",
+
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -105,3 +109,4 @@ require('p-snip')
 require('p-treesitter')
 require('other')
 require('p-tree')
+require('p-yanky')
