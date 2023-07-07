@@ -10,6 +10,7 @@ require('nvim-web-devicons').setup({
 })
 require('telescope').setup {
   defaults = {
+    file_ignore_patterns = { "node_modules", "yarn.lock" },
     dynamic_preview_title = true,
     path_display = { 'smart' },
     mappings = {
