@@ -3,6 +3,10 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
-    formatting.prettierd.with({ extra_args = { "--no-semi", "--single-quote" } }),
+    formatting.prettierd.with({
+      extra_args = { "--no-semi", "--single-quote", "--trailing-comma=all",
+        "--single-attribute-per-line"
+      }
+    }),
   },
 })
