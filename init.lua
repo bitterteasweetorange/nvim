@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "sainnhe/everforest",
+  "EdenEast/nightfox.nvim",
   "nvim-lualine/lualine.nvim",
 
   "williamboman/mason.nvim",
@@ -88,7 +89,6 @@ require("lazy").setup({
 
   "gbprod/yanky.nvim",
   "hinell/duplicate.nvim",
-
 
   {
     "folke/flash.nvim",
