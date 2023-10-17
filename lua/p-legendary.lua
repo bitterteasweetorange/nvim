@@ -23,5 +23,23 @@ legendary.keymaps({
     mode = { "v" },
     "<S-A-Down>",
     "<CMD>VisualDuplicate +1<CR>"
-  }
+  },
+  {
+    description = "find a project based on patterns",
+    mode = { "n" },
+    "<leader>d",
+    "<CMD>Telescope neovim-project discover<CR>"
+  },
+  {
+    description = "select a project from your recent history",
+    mode = { "n" },
+    "<leader>h",
+    "<CMD>Telescope neovim-project history<CR>"
+  },
+  {
+    description = "select a project from your recent history",
+    mode = { "n" },
+    "<leader>c",
+    "<CMD>NeovimProjectLoadRecent<CR>"
+  },
 })
