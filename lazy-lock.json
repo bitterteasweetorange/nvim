@@ -36,11 +36,13 @@
   "nvim-ts-rainbow": { "branch": "master", "commit": "ef95c15a935f97c65a80e48e12fe72d49aacf9b9" },
   "nvim-web-devicons": { "branch": "master", "commit": "9ab9b0b894b2388a9dbcdee5f00ce72e25d85bf9" },
   "plenary.nvim": { "branch": "master", "commit": "bda256fab0eb66a15e8190937e417e6a14ee5d72" },
+  "telescope-vim-bookmarks.nvim": { "branch": "main", "commit": "92498cbf7c127dea37c3d27117b60dd7ab9baef4" },
   "telescope.nvim": { "branch": "master", "commit": "276362a8020c6e94c7a76d49aa00d4923b0c02f3" },
   "template-string.nvim": { "branch": "main", "commit": "e347d83c80bd1ec77e13a37962013199d216a8cd" },
   "todo-comments.nvim": { "branch": "main", "commit": "09b0b17d824d2d56f02ff15967e8a2499a89c731" },
   "toggleterm.nvim": { "branch": "main", "commit": "2249e974faed67e795ffc2ca2be13b93c5d51938" },
   "typescript.nvim": { "branch": "main", "commit": "de304087e6e49981fde01af8ccc5b21e8519306f" },
+  "vim-bookmarks": { "branch": "master", "commit": "9cc5fa7ecc23b052bd524d07c85356c64b92aeef" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "wildfire.vim": { "branch": "master", "commit": "b371e2b1d938ae0e164146136051de164ecb9aa5" },
   "yanky.nvim": { "branch": "main", "commit": "b12561386a25645adb7504e0e6a8c5dc8b31e6da" }

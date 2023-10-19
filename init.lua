@@ -19,6 +19,9 @@ require("lazy").setup({
   "EdenEast/nightfox.nvim",
   "nvim-lualine/lualine.nvim",
 
+  "MattesGroeger/vim-bookmarks",
+  "tom-anders/telescope-vim-bookmarks.nvim",
+
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
@@ -155,3 +158,4 @@ require('p-tree')
 require('p-yanky')
 require('p-comment')
 require('p-legendary')
+require('p-bookmark')
