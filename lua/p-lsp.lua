@@ -1,4 +1,7 @@
-local on_attach = function()
+local on_attach = function(client)
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
+
   local Format = vim.api.nvim_create_augroup("Format", { clear = true })
   vim.api.nvim_create_autocmd("BufWritePre", {
     group = Format,
@@ -17,10 +20,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp_config = {
   capabilities = capabilities,
   group = vim.api.nvim_create_augroup('LspFormatting', { clear = true }),
-  on_attach = function()
-    on_attach()
+  on_attach = function(client)
+    on_attach(client)
   end
 }
+
 
 require('mason-lspconfig').setup_handlers({
   function(server_name)
@@ -40,8 +44,8 @@ require('mason-lspconfig').setup_handlers({
   tsserver = function()
     require('typescript').setup({
       server = vim.tbl_extend('force', lsp_config, {
-        on_attach = function()
-          on_attach()
+        on_attach = function(client)
+          on_attach(client)
         end,
         init_options = {
           preferences = {
