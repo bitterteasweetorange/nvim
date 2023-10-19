@@ -1,5 +1,6 @@
 local legendary = require("legendary")
 legendary.keymaps({
+  -- duplicate
   {
     description = "Line: duplicate up",
     mode = { "n" },
@@ -24,6 +25,7 @@ legendary.keymaps({
     "<S-A-Down>",
     "<CMD>VisualDuplicate +1<CR>"
   },
+  -- project
   {
     description = "find a project based on patterns",
     mode = { "n" },
@@ -35,11 +37,5 @@ legendary.keymaps({
     mode = { "n" },
     "<leader>h",
     "<CMD>Telescope neovim-project history<CR>"
-  },
-  {
-    description = "select a project from your recent history",
-    mode = { "n" },
-    "<leader>c",
-    "<CMD>NeovimProjectLoadRecent<CR>"
   },
 })
