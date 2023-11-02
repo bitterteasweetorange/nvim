@@ -142,6 +142,7 @@ require("lazy").setup({
 })
 
 require('base')
+require('neovide')
 require('maps')
 require('p-mason')
 require('p-null')
