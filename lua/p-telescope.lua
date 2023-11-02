@@ -15,7 +15,7 @@ require('telescope').setup {
     }
   },
   defaults = {
-    file_ignore_patterns = { "node_modules", "yarn.lock" },
+    file_ignore_patterns = { "node_modules", "yarn.lock","schema.gql" },
     dynamic_preview_title = true,
     path_display = { 'smart' },
     mappings = {
