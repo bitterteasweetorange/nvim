@@ -42,3 +42,8 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.wo.foldlevel = 99
+
+
+vim.g.neovide_scale_factor = 1.6
+vim.g.neovide_transparency = 0.9
+
