@@ -44,6 +44,4 @@ opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.wo.foldlevel = 99
 
 
-vim.g.neovide_scale_factor = 1.6
-vim.g.neovide_transparency = 0.9
 
