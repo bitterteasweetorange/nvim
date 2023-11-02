@@ -5,6 +5,5 @@
 ## Requirements
 
 - [Neovim 0.8+](https://github.com/neovim/neovim/releases/tag/v0.8.1)
-- [lazy.nvim](https://github.com/folke/lazy.nvim)
 - [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)

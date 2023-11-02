@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { 'echasnovski/mini.indentscope', version = false },
   "sainnhe/everforest",
-  "EdenEast/nightfox.nvim",
   "nvim-lualine/lualine.nvim",
 
   "MattesGroeger/vim-bookmarks",
