@@ -1,8 +1,6 @@
 vim.cmd([[highlight BookmarkLine ctermbg=194 ctermfg=NONE]])
 
 vim.g.bookmark_sign = '♥️'
--- doesn't work
-vim.g.bookmark_highlight_lines = 1
 
 vim.keymap.set(
   'n',

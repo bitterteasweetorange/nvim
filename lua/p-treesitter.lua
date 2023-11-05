@@ -47,27 +47,24 @@ require('template-string').setup({
     'typescriptreact',
     'javascriptreact',
     'python',
-  }, -- filetypes where the plugin is active
-  jsx_brackets = true, -- must add brackets to jsx attributes
-  remove_template_string = false, -- remove backticks when there are no template string
+  },
+  jsx_brackets = true,
+  remove_template_string = false,
   restore_quotes = {
-    -- quotes used when "remove_template_string" option is enabled
     normal = [[']],
     jsx = [["]],
   },
 })
 
 require('treesitter-context').setup({
-  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
-  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+  enable = true,
+  max_lines = 0,
+  min_window_height = 0,
   line_numbers = true,
-  multiline_threshold = 20, -- Maximum number of lines to collapse for a single context line
-  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-  mode = 'cursor', -- Line used to calculate context. Choices: 'cursor', 'topline'
-  -- Separator between context and content. Should be a single character string, like '-'.
-  -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+  multiline_threshold = 20,
+  trim_scope = 'outer',
+  mode = 'cursor',
   separator = nil,
-  zindex = 20, -- The Z-index of the context window
-  on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+  zindex = 20,
+  on_attach = nil,
 })

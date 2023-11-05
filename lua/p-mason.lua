@@ -20,6 +20,8 @@ require('mason-tool-installer').setup({
     'rust-analyzer',
     'typescript-language-server',
     'lua-language-server',
+    'stylua',
+    'graphql-language-service-cli',
   },
   auto_update = true,
 })
