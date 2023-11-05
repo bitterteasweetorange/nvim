@@ -1,6 +1,6 @@
-local cmp = require 'cmp'
+local cmp = require('cmp')
 local luasnip = require('luasnip')
-local lspkind = require 'lspkind'
+local lspkind = require('lspkind')
 
 cmp.setup({
   snippet = {
@@ -18,20 +18,22 @@ cmp.setup({
       else
         fallback()
       end
-    end, { "i", "s" }),
+    end, { 'i', 's' }),
     ['<c-b>'] = cmp.mapping(function(fallback)
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       else
         fallback()
       end
-    end, { "i", "s" })
+    end, { 'i', 's' }),
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp',
+    {
+      name = 'nvim_lsp',
       entry_filter = function(entry)
-        return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-      end
+        return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()]
+          ~= 'Text'
+      end,
     },
     { name = 'luasnip' }, -- For luasnip users.
   }, {
@@ -40,7 +42,9 @@ cmp.setup({
   formatting = {
     format = function(entry, vim_item)
       if vim.tbl_contains({ 'path' }, entry.source.name) then
-        local icon, hl_group = require('nvim-web-devicons').get_icon(entry:get_completion_item().label)
+        local icon, hl_group = require('nvim-web-devicons').get_icon(
+          entry:get_completion_item().label
+        )
         if icon then
           vim_item.kind = icon
           vim_item.kind_hl_group = hl_group
@@ -48,8 +52,8 @@ cmp.setup({
         end
       end
       return lspkind.cmp_format({ with_text = true })(entry, vim_item)
-    end
-  }
+    end,
+  },
 })
 
 cmp.setup.filetype('gitcommit', {
@@ -57,23 +61,23 @@ cmp.setup.filetype('gitcommit', {
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
     { name = 'buffer' },
-  })
+  }),
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
-  }
+    { name = 'buffer' },
+  },
 })
 
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'path' }
+    { name = 'path' },
   }, {
-    { name = 'cmdline' }
-  })
+    { name = 'cmdline' },
+  }),
 })
 
 vim.cmd([[

@@ -10,7 +10,7 @@ keymap.set('n', '<c-a>', 'ggVG')
 keymap.set('n', 'H', '^')
 keymap.set('n', 'L', '$')
 
-keymap.set('n', "j", [[v:count?'j':'gj']], { noremap = true, expr = true })
-keymap.set('n', "k", [[v:count?'k':'gk']], { noremap = true, expr = true })
+keymap.set('n', 'j', [[v:count?'j':'gj']], { noremap = true, expr = true })
+keymap.set('n', 'k', [[v:count?'k':'gk']], { noremap = true, expr = true })
 
-keymap.set({'n','x'}, '<leader>p', '"0p' )
+keymap.set({ 'n', 'x' }, '<leader>p', '"0p')
