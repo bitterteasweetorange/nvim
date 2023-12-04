@@ -13,6 +13,37 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  {
+    'saecki/crates.nvim',
+    event = { 'BufRead Cargo.toml' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup({
+        src = {
+          cmp = {
+            enabled = true,
+          },
+        },
+        null_ls = {
+          enabled = true,
+        },
+        popup = {
+          autofocus = true,
+          hide_on_select = true,
+        },
+      })
+    end,
+  },
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function()
+      require('null-ls').setup({
+        null_ls = {
+          enabled = true,
+        },
+      })
+    end,
+  },
   'simrat39/rust-tools.nvim',
   'nvimdev/lspsaga.nvim',
   'nvim-lualine/lualine.nvim',
@@ -189,3 +220,4 @@ require('p-lualine')
 require('color')
 require('lsp-rust')
 require('neovide')
+require('p-crates')

@@ -20,7 +20,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<cr>', opts)
-    vim.keymap.set('n', '<leader>k', '<cmd>Lspsaga hover_doc<cr>', opts)
     vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
     vim.keymap.set(
       { 'n', 'v' },
@@ -31,3 +30,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
   end,
 })
+
+-- for crates.nvim
+local function show_documentation()
+  local filetype = vim.bo.filetype
+  if vim.tbl_contains({ 'vim', 'help' }, filetype) then
+    vim.cmd('h ' .. vim.fn.expand('<cword>'))
+  elseif vim.tbl_contains({ 'man' }, filetype) then
+    vim.cmd('Man ' .. vim.fn.expand('<cword>'))
+  elseif
+    vim.fn.expand('%:t') == 'Cargo.toml' and require('crates').popup_available()
+  then
+    require('crates').show_popup()
+  else
+    vim.cmd('Lspsaga hover_doc')
+  end
+end
+
+vim.keymap.set('n', '<space>k', show_documentation, { silent = true })
