@@ -15,7 +15,7 @@ require('telescope').setup({
       '.git',
       'lazy-lock.json',
       'node_modules',
-      'yarn.lock',
+      '%.lock',
       'schema.gql',
     },
     dynamic_preview_title = true,
