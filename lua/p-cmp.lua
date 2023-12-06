@@ -1,4 +1,4 @@
-local cmp = require('cmp')
+local cmp = require 'cmp'
 
 local cmp_kinds = {
   Text = '  ',
@@ -28,7 +28,7 @@ local cmp_kinds = {
   TypeParameter = '  ',
 }
 
-cmp.setup({
+cmp.setup {
   formatting = {
     format = function(_, vim_item)
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
@@ -40,10 +40,10 @@ cmp.setup({
       require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
-  mapping = cmp.mapping.preset.insert({
+  mapping = cmp.mapping.preset.insert {
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
+    ['<CR>'] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' }, -- For luasnip users.
@@ -51,7 +51,7 @@ cmp.setup({
   }, {
     { name = 'buffer' },
   }),
-})
+}
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {

@@ -1,4 +1,4 @@
-require('lualine').setup({
+require('lualine').setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { { 'filename', path = 3 } },
@@ -7,4 +7,4 @@ require('lualine').setup({
     lualine_y = {},
     lualine_z = { 'filetype' },
   },
-})
+}

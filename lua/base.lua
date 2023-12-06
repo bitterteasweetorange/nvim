@@ -9,8 +9,8 @@ opt.sidescrolloff = 5
 opt.hlsearch = true
 opt.incsearch = true
 
-opt.mouse:append('a')
-opt.clipboard:append('unnamedplus')
+opt.mouse:append 'a'
+opt.clipboard:append 'unnamedplus'
 
 opt.tabstop = 2
 opt.shiftwidth = 2
@@ -29,9 +29,9 @@ opt.termguicolors = true
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank({
+    vim.highlight.on_yank {
       higroup = 'IncSearch',
       timeout = 300,
-    })
+    }
   end,
 })

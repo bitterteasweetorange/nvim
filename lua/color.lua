@@ -1,7 +1,7 @@
 vim.g.everforest_diagnostic_line_highlight = 1
-vim.cmd('colorscheme everforest')
+vim.cmd 'colorscheme everforest'
 
-vim.fn.sign_define({
+vim.fn.sign_define {
   {
     name = 'DiagnosticSignError',
     text = '',
@@ -26,4 +26,4 @@ vim.fn.sign_define({
     texthl = 'DiagnosticSignHint',
     linehl = 'HintLine',
   },
-})
+}

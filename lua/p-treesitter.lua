@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup({
+require('nvim-treesitter.configs').setup {
   ensure_installed = {
     'tsx',
     'lua',
@@ -28,7 +28,7 @@ require('nvim-treesitter.configs').setup({
   autotag = {
     enable = true,
   },
-})
+}
 
 require('template-string').setup()
 

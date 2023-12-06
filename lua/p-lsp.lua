@@ -1,16 +1,16 @@
 local keymap = vim.keymap
 
-require('lspsaga').setup({
+require('lspsaga').setup {
   ui = {
     border = 'rounded',
   },
-})
+}
 
 keymap.set('n', '[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>')
 keymap.set('n', ']d', '<cmd>Lspsaga diagnostic_jump_next<cr>')
 keymap.set('n', '<leader>o', '<cmd>Lspsaga outline<cr>')
 
-local builtin = require('telescope.builtin')
+local builtin = require 'telescope.builtin'
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -35,15 +35,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local function show_documentation()
   local filetype = vim.bo.filetype
   if vim.tbl_contains({ 'vim', 'help' }, filetype) then
-    vim.cmd('h ' .. vim.fn.expand('<cword>'))
+    vim.cmd('h ' .. vim.fn.expand '<cword>')
   elseif vim.tbl_contains({ 'man' }, filetype) then
-    vim.cmd('Man ' .. vim.fn.expand('<cword>'))
+    vim.cmd('Man ' .. vim.fn.expand '<cword>')
   elseif
-    vim.fn.expand('%:t') == 'Cargo.toml' and require('crates').popup_available()
+    vim.fn.expand '%:t' == 'Cargo.toml' and require('crates').popup_available()
   then
     require('crates').show_popup()
   else
-    vim.cmd('Lspsaga hover_doc')
+    vim.cmd 'Lspsaga hover_doc'
   end
 end
 

@@ -1,4 +1,4 @@
-require('mason').setup({
+require('mason').setup {
   ui = {
     icons = {
       package_installed = '✓',
@@ -6,9 +6,9 @@ require('mason').setup({
       package_uninstalled = '✗',
     },
   },
-})
+}
 require('mason-lspconfig').setup()
-require('mason-tool-installer').setup({
+require('mason-tool-installer').setup {
   ensure_installed = {
     'lua-language-server',
     'stylua',
@@ -16,4 +16,4 @@ require('mason-tool-installer').setup({
     'prettierd',
     'rust-analyzer',
   },
-})
+}

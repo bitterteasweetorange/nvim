@@ -1,5 +1,5 @@
-local legendary = require('legendary')
-legendary.keymaps({
+local legendary = require 'legendary'
+legendary.keymaps {
   -- duplicate
   {
     description = 'Line: duplicate up',
@@ -38,4 +38,4 @@ legendary.keymaps({
     '<leader>h',
     '<CMD>Telescope neovim-project history<CR>',
   },
-})
+}

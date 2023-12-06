@@ -1,24 +1,24 @@
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+  vim.fn.system {
     'git',
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     '--branch=stable', -- latest stable release
     lazypath,
-  })
+  }
 end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
+require('lazy').setup {
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('crates').setup({
+      require('crates').setup {
         src = {
           cmp = {
             enabled = true,
@@ -31,17 +31,17 @@ require('lazy').setup({
           autofocus = true,
           hide_on_select = true,
         },
-      })
+      }
     end,
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
     config = function()
-      require('null-ls').setup({
+      require('null-ls').setup {
         null_ls = {
           enabled = true,
         },
-      })
+      }
     end,
   },
   'simrat39/rust-tools.nvim',
@@ -104,7 +104,7 @@ require('lazy').setup({
     },
     init = function()
       -- enable saving the state of plugins in the session
-      vim.opt.sessionoptions:append('globals') -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
+      vim.opt.sessionoptions:append 'globals' -- save global variables that start with an uppercase letter and contain at least one lowercase letter.
     end,
     dependencies = {
       { 'nvim-lua/plenary.nvim' },
@@ -143,9 +143,9 @@ require('lazy').setup({
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
     event = 'VeryLazy',
     config = function()
-      require('nvim-surround').setup({
+      require('nvim-surround').setup {
         -- Configuration here, or leave empty to use defaults
-      })
+      }
     end,
   },
   'rmagatti/alternate-toggler',
@@ -196,28 +196,28 @@ require('lazy').setup({
   'mg979/vim-visual-multi',
   'f-person/git-blame.nvim',
   'github/copilot.vim',
-})
+}
 
-require('base')
-require('keymap')
-require('p-mason')
-require('p-lsp')
-require('lsp-lua')
-require('p-conform')
-require('p-tree')
-require('p-telescope')
-require('p-bookmark')
-require('lsp-typescript')
-require('p-lint')
-require('p-cmp')
-require('p-treesitter')
-require('p-term')
-require('p-indent')
-require('p-text')
-require('p-comment')
-require('p-legendary')
-require('p-lualine')
-require('color')
-require('lsp-rust')
-require('neovide')
-require('p-crates')
+require 'base'
+require 'keymap'
+require 'p-mason'
+require 'p-lsp'
+require 'lsp-lua'
+require 'p-conform'
+require 'p-tree'
+require 'p-telescope'
+require 'p-bookmark'
+require 'lsp-typescript'
+require 'p-lint'
+require 'p-cmp'
+require 'p-treesitter'
+require 'p-term'
+require 'p-indent'
+require 'p-text'
+require 'p-comment'
+require 'p-legendary'
+require 'p-lualine'
+require 'color'
+require 'lsp-rust'
+require 'neovide'
+require 'p-crates'

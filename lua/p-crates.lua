@@ -1,4 +1,4 @@
-local crates = require('crates')
+local crates = require 'crates'
 local opts = { silent = true }
 
 vim.keymap.set('n', '<leader>cv', crates.show_versions_popup, opts)
