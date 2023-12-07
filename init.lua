@@ -172,7 +172,15 @@ require('lazy').setup {
   },
   'MattesGroeger/vim-bookmarks',
   'tom-anders/telescope-vim-bookmarks.nvim',
-  'sainnhe/everforest',
+  {
+    'sainnhe/everforest',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.everforest_diagnostic_line_highlight = 1
+      vim.cmd [[colorscheme everforest]]
+    end,
+  },
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
