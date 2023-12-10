@@ -18,6 +18,7 @@ require('lazy').setup {
   'JoosepAlviste/nvim-ts-context-commentstring',
   { import = 'p-lint' },
   { import = 'p-treesitter' },
+  { import = 'p-tree' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -191,8 +192,6 @@ require('lazy').setup {
     'stevearc/conform.nvim',
     opts = {},
   },
-  'nvim-tree/nvim-tree.lua',
-  'nvim-tree/nvim-web-devicons',
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
