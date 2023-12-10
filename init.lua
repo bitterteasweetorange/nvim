@@ -12,8 +12,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+require 'base'
+require 'keymap'
 require('lazy').setup {
   { import = 'p-lint' },
+  { import = 'p-treesitter' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -138,7 +141,6 @@ require('lazy').setup {
     keys = { '<space>m', '<space>j', '<space>s' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
-  'gcmt/wildfire.vim',
   {
     'kylechui/nvim-surround',
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
@@ -154,7 +156,6 @@ require('lazy').setup {
   { 'akinsho/toggleterm.nvim', version = '*', config = true },
   'axelvc/template-string.nvim',
   'windwp/nvim-ts-autotag',
-  'nvim-treesitter/nvim-treesitter',
   'neovim/nvim-lspconfig',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
@@ -206,8 +207,6 @@ require('lazy').setup {
   'github/copilot.vim',
 }
 
-require 'base'
-require 'keymap'
 require 'p-mason'
 require 'p-lsp'
 require 'lsp-lua'
@@ -217,7 +216,6 @@ require 'p-telescope'
 require 'p-bookmark'
 require 'lsp-typescript'
 require 'p-cmp'
-require 'p-treesitter'
 require 'p-term'
 require 'p-indent'
 require 'p-text'
