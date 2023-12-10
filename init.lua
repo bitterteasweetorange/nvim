@@ -20,6 +20,7 @@ require('lazy').setup {
   { import = 'p-treesitter' },
   { import = 'p-tree' },
   { import = 'p-cmp' },
+  { import = 'p-conform' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -182,10 +183,6 @@ require('lazy').setup {
   'neovim/nvim-lspconfig',
   'WhoIsSethDaniel/mason-tool-installer.nvim',
   {
-    'stevearc/conform.nvim',
-    opts = {},
-  },
-  {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     opts = {}, -- this is equalent to setup({}) function
@@ -203,7 +200,6 @@ require('lazy').setup {
 require 'p-mason'
 require 'p-lsp'
 require 'lsp-lua'
-require 'p-conform'
 require 'p-tree'
 require 'p-telescope'
 require 'p-bookmark'
