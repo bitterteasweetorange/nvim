@@ -13,6 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
+  { import = 'p-lint' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -164,7 +165,6 @@ require('lazy').setup {
   'L3MON4D3/LuaSnip',
   'saadparwaiz1/cmp_luasnip',
 
-  'mfussenegger/nvim-lint',
   {
     'pmizio/typescript-tools.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
@@ -216,7 +216,6 @@ require 'p-tree'
 require 'p-telescope'
 require 'p-bookmark'
 require 'lsp-typescript'
-require 'p-lint'
 require 'p-cmp'
 require 'p-treesitter'
 require 'p-term'
