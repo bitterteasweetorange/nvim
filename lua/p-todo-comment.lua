@@ -1,6 +1,5 @@
 return {
   'folke/todo-comments.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
     vim.keymap.set('n', ']t', function()

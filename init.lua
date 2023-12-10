@@ -22,6 +22,7 @@ require('lazy').setup {
   { import = 'p-conform' },
   { import = 'p-comment' },
   { import = 'p-todo-comment' },
+  { import = 'p-mason' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -143,9 +144,7 @@ require('lazy').setup {
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
     event = 'VeryLazy',
     config = function()
-      require('nvim-surround').setup {
-        -- Configuration here, or leave empty to use defaults
-      }
+      require('nvim-surround').setup {}
     end,
   },
   'rmagatti/alternate-toggler',
@@ -154,7 +153,6 @@ require('lazy').setup {
   'axelvc/template-string.nvim',
   'windwp/nvim-ts-autotag',
   'neovim/nvim-lspconfig',
-
   {
     'pmizio/typescript-tools.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
@@ -171,10 +169,7 @@ require('lazy').setup {
       vim.cmd [[colorscheme everforest]]
     end,
   },
-  'williamboman/mason.nvim',
-  'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
-  'WhoIsSethDaniel/mason-tool-installer.nvim',
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -190,7 +185,6 @@ require('lazy').setup {
   'github/copilot.vim',
 }
 
-require 'p-mason'
 require 'p-lsp'
 require 'lsp-lua'
 require 'p-tree'
