@@ -19,6 +19,7 @@ require('lazy').setup {
   { import = 'p-lint' },
   { import = 'p-treesitter' },
   { import = 'p-tree' },
+  { import = 'p-cmp' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -159,14 +160,6 @@ require('lazy').setup {
   'axelvc/template-string.nvim',
   'windwp/nvim-ts-autotag',
   'neovim/nvim-lspconfig',
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/nvim-cmp',
-
-  'L3MON4D3/LuaSnip',
-  'saadparwaiz1/cmp_luasnip',
 
   {
     'pmizio/typescript-tools.nvim',
@@ -215,7 +208,6 @@ require 'p-tree'
 require 'p-telescope'
 require 'p-bookmark'
 require 'lsp-typescript'
-require 'p-cmp'
 require 'p-term'
 require 'p-indent'
 require 'p-text'

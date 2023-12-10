@@ -16,6 +16,7 @@
   "git-blame.nvim": { "branch": "master", "commit": "f07e913b7143f19edd6787229f2d51759b478600" },
   "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "legendary.nvim": { "branch": "master", "commit": "234e2ef8dec65db153c63a8b310c74155bb93ee7" },
+  "lspkind.nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "lspsaga.nvim": { "branch": "main", "commit": "d3dfaea0125315110ea720c337ab88aa451d75e7" },
   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a5476087db0a20c05bd1163e1cd4a29b795e73a7" },
