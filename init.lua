@@ -15,12 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 require 'base'
 require 'keymap'
 require('lazy').setup {
-  'JoosepAlviste/nvim-ts-context-commentstring',
   { import = 'p-lint' },
   { import = 'p-treesitter' },
   { import = 'p-tree' },
   { import = 'p-cmp' },
   { import = 'p-conform' },
+  { import = 'p-comment' },
+  { import = 'p-todo-comment' },
   {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
@@ -133,14 +134,6 @@ require('lazy').setup {
     -- dependencies = { 'kkharji/sqlite.lua' }
   },
   {
-    'folke/todo-comments.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-  {
-    'numToStr/Comment.nvim',
-    lazy = false,
-  },
-  {
     'Wansmer/treesj',
     keys = { '<space>m', '<space>j', '<space>s' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
@@ -207,7 +200,6 @@ require 'lsp-typescript'
 require 'p-term'
 require 'p-indent'
 require 'p-text'
-require 'p-comment'
 require 'p-legendary'
 require 'p-lualine'
 require 'color'
