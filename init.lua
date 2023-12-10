@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require 'base'
 require 'keymap'
 require('lazy').setup {
+  'JoosepAlviste/nvim-ts-context-commentstring',
   { import = 'p-lint' },
   { import = 'p-treesitter' },
   {
