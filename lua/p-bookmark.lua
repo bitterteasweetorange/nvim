@@ -16,5 +16,5 @@ keymap.set(
 keymap.set(
   'n',
   'mc',
-  '<cmd>lua require("telescope).extensions.vim_bookmarks.current_file()<cr>'
+  '<cmd>lua require("telescope").extensions.vim_bookmarks.current_file()<cr>'
 )
