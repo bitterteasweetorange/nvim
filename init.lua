@@ -14,7 +14,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require 'base'
-require 'color'
 require 'neovide'
 require 'keymap'
 require('lazy').setup 'plugins'
