@@ -10,11 +10,6 @@ local keymap = vim.keymap
 
 keymap.set(
   'n',
-  'ma',
-  '<cmd>lua require("telescope").extensions.vim_bookmarks.all()<cr>'
-)
-keymap.set(
-  'n',
   'mc',
   '<cmd>lua require("telescope").extensions.vim_bookmarks.current_file()<cr>'
 )
