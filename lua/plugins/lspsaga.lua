@@ -30,7 +30,7 @@ return {
         vim.keymap.set(
           { 'n', 'v' },
           '<space>ca',
-          '<cmd>Lspsaga cade_action<cr>',
+          '<cmd>Lspsaga code_action<cr>',
           opts
         )
         vim.keymap.set('n', 'gr', builtin.lsp_references, opts)
