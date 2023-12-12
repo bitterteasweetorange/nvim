@@ -17,6 +17,7 @@ return {
           },
         },
         file_ignore_patterns = {
+          'codegen.ts',
           '.git',
           'lazy-lock.json',
           'node_modules',

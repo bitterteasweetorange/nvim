@@ -1,0 +1,68 @@
+{
+  "Action Buttons": {
+    "prefix": "ac",
+    "description": "action buttons: custom",
+    "body": [
+      "<Button type='reset'>reset</Button>",
+      "<Button type='submit'>submit</Button>"
+    ]
+  },
+  "React Component": {
+    "prefix": "rc",
+    "description": "React Component",
+    "body": [
+      "export interface $1Props {",
+      "\t$2",
+      "}",
+      "export function $1(props: $1Props){",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$3",
+      "\t\t</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "React Next": {
+    "prefix": "rn",
+    "description": "React Component: custom",
+    "body": [
+      "import { type NextPage } from 'next'",
+      "const $1: NextPage = () => {",
+      "  return <div>$1</div>",
+      "}",
+      "export default $1"
+    ]
+  },
+  "tab": {
+    "prefix": "tab",
+    "description": "tab",
+    "body": [
+      "enum TabKind {",
+      "  SHOULD,",
+      "  COUNTED,",
+      "}",
+      "",
+      "",
+      "<TabProvider initialValue={TabKind.SHOULD}>",
+      "        <Tabs",
+      "          sx={{",
+      "            p: '0 24px',",
+      "          }}",
+      "        >",
+      "          <Tab",
+      "            label={'SHOULD'}",
+      "            value={TabKind.SHOULD}",
+      "          ></Tab>",
+      "          <Tab",
+      "            label={'COUNTED'}",
+      "            value={TabKind.COUNTED}",
+      "          ></Tab>",
+      "        </Tabs>",
+      "      </TabProvider>",
+      "",
+      "",
+      ""
+    ]
+  }
+}

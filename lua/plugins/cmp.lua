@@ -71,5 +71,10 @@ return {
         { name = 'cmdline' },
       }),
     })
+
+    -- snippets
+    require('luasnip.loaders.from_vscode').load {
+      paths = { '~/.config/nvim/snippets' },
+    }
   end,
 }
