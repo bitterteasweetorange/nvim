@@ -17,5 +17,19 @@ return {
         },
       },
     }
+    local autocmd = vim.api.nvim_create_autocmd
+    local Format = vim.api.nvim_create_augroup('Format', { clear = true })
+    autocmd('BufWritePre', {
+      group = Format,
+      pattern = '*.ts,*.tsx,*.jsx,*.js',
+      callback = function()
+        if vim.fn.exists ':TSToolsOrganizeImports' then
+          vim.cmd 'TSToolsAddMissingImports'
+          vim.cmd 'TSToolsOrganizeImports'
+          return {}
+        end
+        return {}
+      end,
+    })
   end,
 }
