@@ -1,8 +1,4 @@
 return {
-  {
-    'echasnovski/mini.indentscope',
-    opts = {},
-  },
   'mg979/vim-visual-multi',
   'f-person/git-blame.nvim',
   'github/copilot.vim',
