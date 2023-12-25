@@ -21,5 +21,8 @@ return {
         },
       },
     }
+
+    -- prisma
+    lspconfig.prismals.setup {}
   end,
 }

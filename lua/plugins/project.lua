@@ -3,6 +3,7 @@ return {
   opts = {
     projects = { -- define project roots
       '~/workspace/*',
+      '~/work/*',
       '~/.config/*',
     },
   },
