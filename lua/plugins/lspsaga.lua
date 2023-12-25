@@ -26,7 +26,7 @@ return {
 
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', 'gd', '<cmd>Lspsaga goto_definition<cr>', opts)
-        vim.keymap.set('n', '<space>r', '<cmd>Lspsaga rename<cr>', opts)
+        vim.keymap.set('n', '<space>r', vim.lsp.buf.rename, opts)
         vim.keymap.set(
           { 'n', 'v' },
           '<space>ca',
