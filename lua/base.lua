@@ -24,7 +24,7 @@ opt.swapfile = false
 opt.autoread = true
 vim.bo.autoread = true
 
-opt.cursorline = true
+-- opt.cursorline = true
 opt.termguicolors = true
 
 -- highlight on yank
