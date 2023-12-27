@@ -11,5 +11,5 @@
 ## Style
 
 - no dashboard
-- no tab
+- no buffer
 - no git integrated

@@ -20,6 +20,7 @@ return {
           'codegen.ts',
           '.git',
           'lazy-lock.json',
+          '*-lock.yaml',
           'node_modules',
           '%.lock',
           'schema.gql',
