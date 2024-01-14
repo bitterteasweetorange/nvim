@@ -23,7 +23,6 @@ return {
           '*-lock.yaml',
           'node_modules',
           '%.lock',
-          'schema.gql',
         },
         dynamic_preview_title = true,
         path_display = { 'smart' },
