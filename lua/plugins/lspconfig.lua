@@ -3,12 +3,20 @@ return {
   config = function()
     local lspconfig = require 'lspconfig'
 
+    -- for fold
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    }
+
     -- graphql
     lspconfig.graphql.setup {
       filetypes = {
         'graphql',
         'gql',
       },
+      capabilities = capabilities,
     }
 
     -- lua
@@ -20,9 +28,12 @@ return {
           },
         },
       },
+      capabilities = capabilities,
     }
 
     -- prisma
-    lspconfig.prismals.setup {}
+    lspconfig.prismals.setup {
+      capabilities = capabilities,
+    }
   end,
 }
